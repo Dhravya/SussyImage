@@ -1,5 +1,5 @@
 <div align="center">
-<img src="amongus_images/red.webp" width=60>
+<img src="https://raw.githubusercontent.com/Dhravya/SussyImage/master/amongus_images/Red.webp" width=60>
 <h1 align="center">SussyImage</h1>
 <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
 
