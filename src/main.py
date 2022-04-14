@@ -80,8 +80,8 @@ class SussyImage:
         input_image = resize(
             input_image,
             (
-                self.width,
                 int((self.width / input_image.shape[0]) * input_image.shape[1]),
+                self.width
             ),
         )
 
@@ -116,7 +116,7 @@ class SussyImage:
             try:
                 output_img[i : i + self.emoji_size, j : j + self.emoji_size] = image
             except Exception as e:
-                print(e)
+                pass
 
     def run(
         self,
@@ -185,6 +185,6 @@ class SussyImage:
 
 
 if __name__ == "__main__":
-    sussy = SussyImage(input_img_path="input.jpg")
+    sussy = SussyImage(input_img_path="monalisa.jpg")
 
-    sussy.run(70, save=True)
+    sussy.run(25,save=True)

@@ -2,5 +2,3 @@ env/
 images/
 .vscode/
 .env
-*.png
-*.jpg
