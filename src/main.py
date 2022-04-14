@@ -1,5 +1,5 @@
 """
-Makes the input image into funny, smaller amongus characters
+Converts an image into funny, smaller amongus characters
 """
 
 import os
@@ -55,6 +55,7 @@ class SussyImage:
         self.emoji_size = emoji_size
         self.width = width
 
+        # Initialises the image and "emojis"
         self.input_image = self.initialise_picture()
         self.emojis = self.initialise_emojis()
 
