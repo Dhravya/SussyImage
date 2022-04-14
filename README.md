@@ -16,6 +16,9 @@ Mona Lisa                 |  Lona Misa (Made up of AmongUs characters)
 :-------------------------:|:-------------------------:
 ![Mona Lisa](./assets/monalisa.jpg)  |  <img src="./assets/lonamisa.png" alt="LonaMisa" width="405"/>
 
+Here's an even wilder demo that took about 12 minutes to render
+<img src="./output.png" width=800 />
+
 ### Installation
 ```
 git clone https://github.com/Dhravya/sussyimage

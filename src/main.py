@@ -5,10 +5,11 @@ Converts an image into funny, smaller amongus characters
 import os
 from typing import List
 
+from PIL import Image
 import numpy as np
 from rich import print
 from rich.progress import track
-from cv2 import imread, imwrite, imshow, resize, waitKey, destroyAllWindows, INTER_AREA
+from cv2 import imread, imwrite, imshow, resize, waitKey, destroyAllWindows, INTER_AREA, addWeighted
 
 
 class SussyImage:
@@ -123,8 +124,9 @@ class SussyImage:
         atol: float = 50,
         /,
         show: bool = False,
-        save: bool = False,
+        save: bool = True,
         save_path="output.png",
+        compare: bool = False
     ) -> np.ndarray:
         """Runs the entire program
 
@@ -134,6 +136,7 @@ class SussyImage:
             show (bool, optional): Whether or not to show the image after completion. Defaults to False.
             save (bool, optional): Whether of not to save the image. Saves to the provided save_path. Defaults to False.
             save_path (str, optional): Where to save the output. Defaults to "output.png".
+            compare (bool, optional): Stacks the input image and the output image side by side. Defaults to False.
 
         Returns:
         ----------
@@ -169,6 +172,9 @@ class SussyImage:
                         atol=atol,
                     )
 
+        if compare:
+            output_img = np.hstack((input_image, output_img))
+
         if show:
             imshow("Output", output_img)
             waitKey(0)
@@ -185,7 +191,6 @@ class SussyImage:
 
 
 if __name__ == "__main__":
-    sussy = SussyImage(input_img_path="./assets/monalisa.jpg")
+    sussy = SussyImage(input_img_path="./assets/monalisa.jpg", emoji_size=15)
 
-    for i in range(1, 10):
-        sussy.run(i*5, save=True, save_path=f"output{i*5}.png")
+    sussy.run(30, compare=True)
