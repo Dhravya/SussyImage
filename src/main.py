@@ -81,7 +81,7 @@ class SussyImage:
             input_image,
             (
                 int((self.width / input_image.shape[0]) * input_image.shape[1]),
-                self.width
+                self.width,
             ),
         )
 
@@ -115,7 +115,7 @@ class SussyImage:
         if np.allclose(average_col, average_col_image, atol=atol):
             try:
                 output_img[i : i + self.emoji_size, j : j + self.emoji_size] = image
-            except Exception as e:
+            except Exception:
                 pass
 
     def run(
@@ -185,6 +185,7 @@ class SussyImage:
 
 
 if __name__ == "__main__":
-    sussy = SussyImage(input_img_path="monalisa.jpg")
+    sussy = SussyImage(input_img_path="./assets/monalisa.jpg")
 
-    sussy.run(25,save=True)
+    for i in range(1, 10):
+        sussy.run(i*5, save=True, save_path=f"output{i*5}.png")
