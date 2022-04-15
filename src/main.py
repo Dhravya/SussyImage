@@ -5,11 +5,10 @@ Converts an image into funny, smaller amongus characters
 import os
 from typing import List
 
-from PIL import Image
 import numpy as np
 from rich import print
 from rich.progress import track
-from cv2 import imread, imwrite, imshow, resize, waitKey, destroyAllWindows, INTER_AREA, addWeighted
+from cv2 import imread, imwrite, imshow, resize, waitKey, destroyAllWindows, INTER_AREA
 
 
 class SussyImage:
