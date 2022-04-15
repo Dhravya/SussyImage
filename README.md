@@ -13,11 +13,17 @@ Converts an image into funny, smaller amongus characters
 ### Demo
 
 Mona Lisa                 |  Lona Misa (Made up of AmongUs characters)
-:-------------------------:|:-------------------------:
-![Mona Lisa](./assets/monalisa.jpg)  |  <img src="./assets/lonamisa.png" alt="LonaMisa" width="405"/>
-
-Here's an even wilder demo that took about 12 minutes to render
 <img src="./output.png" width=800 />
+
+### API
+I've also added an API that you can use to convert images to amongus characters - it's completely free and open source on the `api` branch.
+
+POST https://sussy.api.dhravya.dev  (Pass input_image as a base64 encoded image in the body)
+
+You can also specify the `atol` by passing it as a query parameter.
+
+Docs - https://sussy.api.dhravya.dev/docs
+
 
 ### Installation
 ```
