@@ -1,5 +1,5 @@
 from random import randint
-from src.main import SussyImage
+from main import SussyImage
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import FileResponse
 
@@ -8,7 +8,7 @@ app = FastAPI()
 @app.post("/")
 def main(input_image: UploadFile = File(...), atol: int = 30):
     r = randint(0, 5)
-    path = f"./src/api/inputs/input_image{r}.png"
+    path = f"./api/inputs/input_image{r}.png"
     with open(path, "wb") as f:
         f.write(input_image.file.read())
 
