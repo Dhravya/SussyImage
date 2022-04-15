@@ -1,3 +1,6 @@
 opencv-python==4.5.5.64
-fastapi
+numpy==1.22.3
+rich==12.2.0
+fastapi==0.75.1
 uvicorn
+python-multipart
