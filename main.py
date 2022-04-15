@@ -189,7 +189,7 @@ class SussyImage:
         return output_img
 
 
-if __name__ == "__main__":
-    sussy = SussyImage(input_img_path="./assets/monalisa.jpg", emoji_size=15)
+import uvicorn
 
-    sussy.run(30, compare=True)
+if __name__ == "__main__":
+  uvicorn.run("api.app:app", host="0.0.0.0", port=8000)
