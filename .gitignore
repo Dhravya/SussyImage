@@ -2,3 +2,4 @@ env/
 images/
 .vscode/
 .env
+.vercel
