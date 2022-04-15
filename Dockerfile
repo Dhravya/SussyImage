@@ -4,6 +4,7 @@ COPY ./requirements.txt .
 COPY ./amongus_images ./amongus_images 
 COPY ./main.py ./main.py 
 COPY ./api ./api
+COPY ./api/inputs ./api/inputs
 
 RUN apt-get update
 RUN apt-get install ffmpeg libsm6 libxext6  -y

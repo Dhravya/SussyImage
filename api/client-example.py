@@ -1,9 +1,11 @@
 import os
 import requests
 
-assert os.path.exists("output.png")
+assert os.path.exists("assets/lonamisa.png")
 
-response = requests.post("http://localhost:8000/", files={"input_image": open("output.png", "rb")})
+response = requests.post("https://sussy.api.dhravya.dev", files={"input_image": open("assets/lonamisa.png", "rb")})
+
+print(response)
 
 # Save response to api_response.png
 with open("api_response.png", "wb") as f:
