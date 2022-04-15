@@ -3,10 +3,10 @@ from main import SussyImage
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import FileResponse
 
-app = FastAPI()
+app = FastAPI(title="Sussy Image API", description="A fastapi api for making amongus images")
 
 @app.post("/")
-def main(input_image: UploadFile = File(...), atol: int = 30):
+def convert_to_sussy(input_image: UploadFile = File(...), atol: int = 30):
     r = randint(0, 5)
     path = f"./api/inputs/input_image{r}.png"
     with open(path, "wb") as f:
