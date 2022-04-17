@@ -5,14 +5,17 @@ from fastapi.responses import FileResponse
 
 app = FastAPI(title="Sussy Image API", description="A fastapi api for making amongus images")
 
-@app.post("/")
-def convert_to_sussy(input_image: UploadFile = File(...), atol: int = 30):
+@app.post("/amongus")
+def convert_to_sussy(input_image: UploadFile = File(...), atol: int = 30, width: int = 1500, compare: bool = False):
     r = randint(0, 5)
     path = f"./api/inputs/input_image{r}.png"
     with open(path, "wb") as f:
         f.write(input_image.file.read())
 
-    sussy = SussyImage(input_img_path=path, emoji_size=50, width=2000)
+    if width > 3000:
+        width = 3000
 
-    sussy.run(atol, show=False, save=True, save_path=path)
+    sussy = SussyImage(input_img_path=path, emoji_size=30, width=width)
+
+    sussy.run(atol, show=False, save=True, save_path=path, compare=compare)
     return FileResponse(path, media_type="image/png")
