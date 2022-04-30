@@ -4,6 +4,8 @@ Converts an image into funny, smaller amongus characters
 
 import os
 from typing import List
+from rich import print
+from rich.progress import track
 
 import numpy as np
 from cv2 import imread, imwrite, imshow, resize, waitKey, destroyAllWindows, INTER_AREA
@@ -148,7 +150,7 @@ class SussyImage:
         avgs = {str(image): get_average_color(image) for image in images}
 
         # Loops through 50 * 50 pixels of the input image
-        for i in range(0, input_image.shape[0], self.emoji_size):
+        for i in track(range(0, input_image.shape[0], self.emoji_size)):
             for j in range(0, input_image.shape[1], self.emoji_size):
                 # Gets the average color of the input image
                 average_col = get_average_color(
